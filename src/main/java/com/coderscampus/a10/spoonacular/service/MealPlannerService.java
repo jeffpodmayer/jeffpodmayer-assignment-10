@@ -2,6 +2,7 @@ package com.coderscampus.a10.spoonacular.service;
 
 import java.net.URI;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -12,11 +13,18 @@ import com.coderscampus.a10.spoonacular.dto.WeekResponse;
 
 @Service
 public class MealPlannerService {
+
+	@Value("${spoonacular.urls.base}")
+	private String baseUrl;
+	
+	@Value("${spoonacular.urls.mealplan}")
+	private String mealPlan;
+	
 	
 	RestTemplate rt = new RestTemplate(); 
 	
 	public ResponseEntity<DayResponse> fetchSpoonacularDataForDay() {
-		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
+		URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlan)
 							.queryParam("timeFrame", "day")
 							.queryParam("targetCaloies", "2000")
 							.queryParam("diet", "vegan")
@@ -33,7 +41,7 @@ public class MealPlannerService {
 	
 	
 	public ResponseEntity<WeekResponse> fetchSpoonacularDataForWeek() {
-		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
+		URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlan)
 				.queryParam("timeFrame", "week")
 				.queryParam("targetCaloies", "2000")
 				.queryParam("diet", "")
