@@ -21,11 +21,11 @@ public class MealPlannerController {
 		
 	}
 	
-	@GetMapping("mealplanner/day")
-	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
-		return mealPlannerService.fetchSpoonacularDataForDay();
-		
-	}
+//	@GetMapping("mealplanner/day")
+//	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
+//		return mealPlannerService.fetchSpoonacularDataForDay();
+//		
+//	}
 	
 
 }
