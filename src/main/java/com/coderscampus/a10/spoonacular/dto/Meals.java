@@ -6,16 +6,7 @@ public class Meals {
 	private String title;
 	private Integer readyInMinutes;
 	private Integer servings;
-	private String sourceURL;
-
-	public Meals(Long id, String imageType, String title, Integer readyInMinutes, Integer servings, String sourceURL) {
-		this.id = id;
-		this.imageType = imageType;
-		this.title = title;
-		this.readyInMinutes = readyInMinutes;
-		this.servings = servings;
-		this.sourceURL = sourceURL;
-	}
+	private String sourceUrl;
 
 	public Long getId() {
 		return id;
@@ -57,12 +48,12 @@ public class Meals {
 		this.servings = servings;
 	}
 
-	public String getSourceURL() {
-		return sourceURL;
+	public String getSourceUrl() {
+		return sourceUrl;
 	}
 
-	public void setSourceURL(String sourceURL) {
-		this.sourceURL = sourceURL;
+	public void setSourceUrl(String sourceURL) {
+		this.sourceUrl = sourceURL;
 	}
 
 }

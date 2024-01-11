@@ -1,19 +1,16 @@
 package com.coderscampus.a10.spoonacular.dto;
 
+import java.util.List;
+
 public class DayResponse {
-	private Meals meals;
+	private List<Meals> meals;
 	private Nutrients nutrients;
 
-	public DayResponse(Meals meals, Nutrients nutrients) {
-		this.meals = meals;
-		this.nutrients = nutrients;
-	}
-
-	public Meals getMeals() {
+	public List<Meals> getMeals() {
 		return meals;
 	}
 
-	public void setMeals(Meals meals) {
+	public void setMeals(List<Meals> meals) {
 		this.meals = meals;
 	}
 

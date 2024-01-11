@@ -2,16 +2,9 @@ package com.coderscampus.a10.spoonacular.dto;
 
 public class Nutrients {
 	private Double calories;
-	private Double protien;
+	private Double protein;
 	private Double fat;
 	private Double carbohydrates;
-
-	public Nutrients(Double calories, Double protien, Double fat, Double carbohydrates) {
-		this.calories = calories;
-		this.protien = protien;
-		this.fat = fat;
-		this.carbohydrates = carbohydrates;
-	}
 
 	public Double getCalories() {
 		return calories;
@@ -21,12 +14,12 @@ public class Nutrients {
 		this.calories = calories;
 	}
 
-	public Double getProtien() {
-		return protien;
+	public Double getProtein() {
+		return protein;
 	}
 
-	public void setProtien(Double protien) {
-		this.protien = protien;
+	public void setProtein(Double protein) {
+		this.protein = protein;
 	}
 
 	public Double getFat() {
