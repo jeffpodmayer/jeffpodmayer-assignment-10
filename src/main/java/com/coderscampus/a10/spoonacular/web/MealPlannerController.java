@@ -23,7 +23,7 @@ public class MealPlannerController {
 	
 	@GetMapping("mealplanner/day")
 	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
-		return null;
+		return mealPlannerService.fetchSpoonacularDataForDay();
 		
 	}
 	
