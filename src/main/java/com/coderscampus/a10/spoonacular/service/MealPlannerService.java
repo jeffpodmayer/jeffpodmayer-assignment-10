@@ -4,21 +4,19 @@ import java.net.URI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.coderscampus.a10.spoonacular.dto.DayResponse;
-import com.coderscampus.a10.spoonacular.dto.WeekResponse;
+//import com.coderscampus.a10.spoonacular.dto.WeekResponse;
 
 @Service
 public class MealPlannerService {
 
-	@Autowired
-	private ResponseEntity<WeekResponse> weekResponse; 
-	
-	@Autowired
-	private ResponseEntity<DayResponse> dayResponse; 
+//	@Autowired
+//	private ResponseEntity<WeekResponse> weekResponse; 
 	
 	RestTemplate rt = new RestTemplate(); 
 	
@@ -33,25 +31,25 @@ public class MealPlannerService {
 							.build()
 							.toUri();
 							
-		dayResponse = rt.getForEntity(uri, DayResponse.class);
+		ResponseEntity<DayResponse> dayResponse = rt.getForEntity(uri, DayResponse.class);
 		return dayResponse;
 			
 	}
 	
 	
 	
-	public ResponseEntity<WeekResponse> fetchSpoonacularDataForWeek() {
-		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
-				.queryParam("timeFrame", "week")
-				.queryParam("targetCaloies", "2500")
-				.queryParam("diet", "vegetarian")
-				.queryParam("exclude", "shellfish")
-				.queryParam("apiKey", "52b2023f776e49889eebc7271c73ce40")
-				.build()
-				.toUri();
-				
-		weekResponse = rt.getForEntity(uri, WeekResponse.class);
-		return weekResponse;
-	}
+//	public ResponseEntity<WeekResponse> fetchSpoonacularDataForWeek() {
+//		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
+//				.queryParam("timeFrame", "week")
+//				.queryParam("targetCaloies", "2500")
+//				.queryParam("diet", "vegetarian")
+//				.queryParam("exclude", "shellfish")
+//				.queryParam("apiKey", "52b2023f776e49889eebc7271c73ce40")
+//				.build()
+//				.toUri();
+//				
+//		weekResponse = rt.getForEntity(uri, WeekResponse.class);
+//		return weekResponse;
+//	}
 }
 

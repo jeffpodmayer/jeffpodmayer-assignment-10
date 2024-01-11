@@ -15,17 +15,17 @@ public class MealPlannerController {
 	@Autowired
 	private MealPlannerService mealPlannerService;
 	
-	@GetMapping("mealplanner/week")
-	public ResponseEntity<WeekResponse> getWeekMeals(String numCalories, String diet, String exclusions){
-		return null;
-		
-	}
-	
-//	@GetMapping("mealplanner/day")
-//	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
-//		return mealPlannerService.fetchSpoonacularDataForDay();
+//	@GetMapping("mealplanner/week")
+//	public ResponseEntity<WeekResponse> getWeekMeals(String numCalories, String diet, String exclusions){
+//		return null;
 //		
 //	}
+	
+	@GetMapping("mealplanner/day")
+	public ResponseEntity<DayResponse> getDayMeals(String numCalories, String diet, String exclusions){
+		return mealPlannerService.fetchSpoonacularDataForDay();
+		
+	}
 	
 
 }
