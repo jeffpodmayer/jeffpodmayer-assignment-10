@@ -34,8 +34,7 @@ public class MealPlannerService {
 							.toUri();
 							
 		ResponseEntity<DayResponse> dayResponse = rt.getForEntity(uri, DayResponse.class);
-		return dayResponse;
-			
+		return dayResponse;		
 	}
 	
 	
