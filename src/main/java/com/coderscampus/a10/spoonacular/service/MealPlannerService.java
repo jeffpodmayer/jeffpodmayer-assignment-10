@@ -26,7 +26,7 @@ public class MealPlannerService {
 	public ResponseEntity<DayResponse> fetchSpoonacularDataForDay() {
 		URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlan)
 							.queryParam("timeFrame", "day")
-							.queryParam("targetCalories", "3000")
+							.queryParam("targetCalories", "2500")
 							.queryParam("diet", "whole30")
 							.queryParam("exclude", "")
 							.queryParam("apiKey", "52b2023f776e49889eebc7271c73ce40")
@@ -44,7 +44,7 @@ public class MealPlannerService {
 		URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlan)
 				.queryParam("timeFrame", "week")
 				.queryParam("targetCalories", "3000")
-				.queryParam("diet", "lowfodmap")
+				.queryParam("diet", "ovovegetarian")
 				.queryParam("exclude", "shellfish")
 				.queryParam("apiKey", "52b2023f776e49889eebc7271c73ce40")
 				.build()
