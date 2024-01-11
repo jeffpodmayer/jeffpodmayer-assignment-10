@@ -1,4 +1,4 @@
-package com.coderscampus.a10;
+package com.coderscampus.a10.spoonacular;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
