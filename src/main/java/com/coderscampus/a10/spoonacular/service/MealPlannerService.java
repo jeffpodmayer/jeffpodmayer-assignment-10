@@ -20,7 +20,7 @@ public class MealPlannerService {
 							.queryParam("timeFrame", "day")
 							.queryParam("targetCaloies", "2000")
 							.queryParam("diet", "vegan")
-							.queryParam("exclude", "shellfish,olives")
+							.queryParam("exclude", "")
 							.queryParam("apiKey", "52b2023f776e49889eebc7271c73ce40")
 							.build()
 							.toUri();
@@ -35,9 +35,9 @@ public class MealPlannerService {
 	public ResponseEntity<WeekResponse> fetchSpoonacularDataForWeek() {
 		URI uri = UriComponentsBuilder.fromHttpUrl("https://api.spoonacular.com/mealplanner/generate")
 				.queryParam("timeFrame", "week")
-				.queryParam("targetCaloies", "2500")
-				.queryParam("diet", "vegetarian")
-				.queryParam("exclude", "shellfish")
+				.queryParam("targetCaloies", "2000")
+				.queryParam("diet", "")
+				.queryParam("exclude", "")
 				.queryParam("apiKey", "52b2023f776e49889eebc7271c73ce40")
 				.build()
 				.toUri();
