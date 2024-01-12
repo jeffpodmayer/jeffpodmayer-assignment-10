@@ -31,7 +31,7 @@ public class MealPlannerService {
 							.queryParam("timeFrame", "day")
 							.queryParam("targetCalories", "1500")
 							.queryParam("diet", "vegetarian")
-							.queryParam("exclude", "shellfish")	
+							.queryParam("exclude", "olives")	
 							.build()
 							.toUri();
 							
