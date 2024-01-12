@@ -27,7 +27,7 @@ public class MealPlannerService {
 		URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlan)
 							.queryParam("timeFrame", "day")
 							.queryParam("targetCalories", "2500")
-							.queryParam("diet", "whole30")
+							.queryParam("diet", "vegetarian")
 							.queryParam("exclude", "")
 							.queryParam("apiKey", "52b2023f776e49889eebc7271c73ce40")
 							.build()
