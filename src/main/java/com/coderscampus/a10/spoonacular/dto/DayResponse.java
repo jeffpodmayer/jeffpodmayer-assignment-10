@@ -3,6 +3,7 @@ package com.coderscampus.a10.spoonacular.dto;
 import java.util.List;
 
 public class DayResponse {
+
 	private List<Meals> meals;
 	private Nutrients nutrients;
 

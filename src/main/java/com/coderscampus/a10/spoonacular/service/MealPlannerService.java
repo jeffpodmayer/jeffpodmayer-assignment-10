@@ -14,25 +14,26 @@ public class MealPlannerService {
 
 	@Value("${spoonacular.urls.base}")
 	private String baseUrl;
-
+	
 	@Value("${spoonacular.urls.mealplan}")
 	private String mealPlan;
-
+	
 	@Value("${spoonacular.api.key}")
 	private String apiKey;
-
-	RestTemplate rt = new RestTemplate();
-
-	public <T> ResponseEntity<T> fetchSpoonacularData(String timeFrame, String numCalories, String diet, String exclude, Class<T> responseType) {
+	
+	RestTemplate rt = new RestTemplate(); 
+	
+	public <T> ResponseEntity <T> fetchSpoonacularData(String timeFrame, String numCalories, String diet, String exclude, Class <T> responseType){
 		URI uri = UriComponentsBuilder.fromHttpUrl(baseUrl + mealPlan)
-								      .queryParam("apiKey", apiKey)
-								      .queryParam("timeFrame", timeFrame)
-								      .queryParam("targetCalories", Optional.ofNullable(numCalories))
-								      .queryParam("diet", Optional.ofNullable(diet))
-								      .queryParam("exclude", Optional.ofNullable(exclude))
-								      .build()
-								      .toUri();
-
+				  .queryParam("apiKey", apiKey)
+				  .queryParam("timeFrame", timeFrame)
+				  .queryParamIfPresent("targetCalories", Optional.ofNullable(numCalories))
+				  .queryParamIfPresent("diet", Optional.ofNullable(diet))
+				  .queryParamIfPresent("exclude", Optional.ofNullable(exclude))
+				  .build()
+				  .toUri();
+		
 		return rt.getForEntity(uri, responseType);
 	}
 }
+
